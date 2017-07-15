@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Age Gate Demo</title>
+    <link href="assets/css/gate.css" rel="stylesheet">
+</head>
+<body>
+    <div class="gate">
+        <div class="container">
+            <div class="item notice" id="noticeText">Please enter your birth date to access our website.</div>
+            <div class="item">
+                <form id="gateAgeForm">
+                    <select id="gateMonth" onchange="updateGateMonth()">
+                        <option disabled selected>Month</option>
+                    </select>
+                    <select id="gateDay" onchange="updateGateDay()">
+                        <option disabled selected>Day</option>
+                    </select>
+                    <select id="gateYear" onchange="updateGateYear()">
+                        <option disabled selected>Year</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/gate.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+//--------------------------------------------
+// Import Google fonts
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+//--------------------------------------------
+
+//--------------------------------------------
+// Font stacks
+$GateFont: 'Source Sans Pro', 'Lato', sans-serif;
+$GateFontColor: #FFF;
+$GateFontWeight: bold;
+//--------------------------------------------
+// Gate Settings
+$_ShowBackground: true; // Gate background. Set to false to show none. See: gateBackground()
+
+// Notice Settings
+$_ShowBackgroundOnNotice: true;
+$NoticeBackground: #000;
+$NoticeBorder: none;
+$NoticePadding: 7px;
+//--------------------------------------------
+
+// Background mixin
+@mixin gateBackground($background) {
+  @if $_ShowBackground == true {
+    background: url('../images/backgrounds/' + $background);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  } @else {
+    background: inherit;
+  }
+}
+//--------------------------------------------
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.gate {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  color: $GateFontColor;
+  font-weight: $GateFontWeight;
+
+  @include gateBackground('fall.jpeg');
+}
+
+.gate .container {
+  margin-top: -20%;
+}
+
+.gate .item {
+  margin: 15px;
+}
+
+.gate .notice {
+  font-size: 21px;
+  letter-spacing: 3px;
+  border: $NoticeBorder;
+  padding: $NoticePadding;
+
+  @if $_ShowBackgroundOnNotice == true {
+    background: $NoticeBackground;
+  }
+}
+
+.gate form {
+  text-align: center;
+}
+
+.gate select {
+  padding: 12px 20px;
+  width: 120px;
+  text-align: center;
+  text-align-last: center;
+  font-weight: 700;
+}
+
+.gate select:not(:last-child) {
+  margin-right: 10px;
+}
