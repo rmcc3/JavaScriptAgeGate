@@ -1,6 +1,8 @@
 ## JavaScript Age Gate
 A JavaScript based age gate, built without any frameworks. Just uses JavaScript, CSS (SASS), and HTML5.
 
+Note: This uses flexbox.
+
 ## How to use
 Simply edit the HTML and JavaScript file as needed. I tried my best to make it simple to drop as a component.
 
